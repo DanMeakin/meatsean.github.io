@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.7.45">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com"
+  crossorigin="">
+  <link href=
+  "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,700&amp;display=swap"
+  rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+          fetch("https://lexica.art/api/v1/search?q=meat+sean")
+            .then(resp => resp.json())
+            .then(({ images }) => {
+                const idx = Math.floor(Math.random() * images.length);
+                const { src } = images[idx];
+                const img = document.getElementById("meat-sean");
+                img.addEventListener('load', () => {
+                    img.classList.add("h-auto");
+                    img.classList.remove("w-[60vw]");
+                    img.classList.remove("h-[50vh]");
+                })
+                img.src = src;
+            })
+  </script>
+  <style>
+          body {
+              font-family: 'EB Garamond', serif;
+          }
+  </style>
+  <title></title>
+</head>
+<body class="bg-repeat bg-cover" style=
+"background-image: url('./background.jpg');">
+  <div class=
+  "flex flex-col h-screen container w-full px-4 mx-auto">
+    <main class="my-auto">
+      <img id="meat-sean" class=
+      "w-[60vw] h-[50vh] mx-auto mt-8 mb-4 max-w-full max-h-[75vh] rounded-xl border-8 border-amber-600 bg-amber-300">
+      <div class="w-auto mx-auto text-center p-2">
+        <span class=
+        "bg-amber-300 text-amber-600 text-3xl sm:text-5xl font-bold italic px-8 rounded border-8 border-amber-600">
+        Meat Sean</span>
+      </div>
+    </main>
+    <footer class="text-right text-white text-sm mb-2 mr-2">
+      <span class="bg-black p-1 rounded-sm"><a href=
+      "https://www.freepik.com/free-vector/colorful-fresh-pork-meat-seamless-pattern_9514119.htm#query=meat%20seamless%20pattern&amp;position=1&amp;from_view=keyword">
+      Background Image by macrovector</a> on Freepik</span>
+    </footer>
+  </div>
+</body>
+</html>
